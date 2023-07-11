@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const categoriaSchema  = mongoose.Schema(
     {
@@ -20,7 +20,6 @@ const categoriaSchema  = mongoose.Schema(
     },
     {
         timestamps:true,
-
     }
 );
 
