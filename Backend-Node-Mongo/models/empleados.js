@@ -2,7 +2,11 @@ import mongoose from "mongoose";
 
 const empleadosSchema = mongoose.Schema(
     {
-
+        apellido:{
+            type:String,
+            required:true,
+            trim:true
+        },
         nombre:{
             type:String,
             required:true,

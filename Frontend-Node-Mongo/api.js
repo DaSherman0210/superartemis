@@ -41,21 +41,32 @@ export const insertarCategorias = async (categoria)=>{
         console.log(error); 
     }
 }
-/*
-export const update=async (categoriaUp,id)=>{
+
+export const getOneCategoria =async (id)=>{
     try {
-        await fetch(`${urlGetCat}/${id}`,{
-            method:'PUT',
+        const data=await fetch (`${urlGetCat}/getOne/${id}`);
+        const result=data.json();
+        return result;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const updateCategoria=async (categoriaUp,id)=>{
+    try {
+        await fetch(`${urlGetCat}/update/${id}`,{
+            method:'PATCH',
             body:JSON.stringify(categoriaUp),
             headers:{
                 'Content-Type':'application/json'
             }
         })
-        location.reload();
+        window.location.href="./index.html"
     } catch (error) {
         console.log(error)
     }
-} */
+}
 
 
 

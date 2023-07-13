@@ -5,6 +5,11 @@ const obtenerCategoria  = async (req,res)=>{
     res.json(categorias);
 }
 
+const obtenerOneCategoria  = async (req,res)=>{
+    const categorias = await categoria.findOne({_id: req.params.id});
+    res.json(categorias);
+}
+
 const agregarCategoria = async (req,res) => {
     const categorias = new categoria(req.body);
 
@@ -47,4 +52,4 @@ const actualizarCategoria = async (req,res) => {
     }
 }
 
-export{obtenerCategoria,agregarCategoria,borrarCategoria,actualizarCategoria};
+export{obtenerCategoria,agregarCategoria,borrarCategoria,actualizarCategoria,obtenerOneCategoria};

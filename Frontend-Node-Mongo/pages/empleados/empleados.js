@@ -1,4 +1,4 @@
-import { empleados , deleteEmpleado} from "./api.js";
+import { empleados , deleteEmpleado,insertarEmpleado} from "./api.js";
 
 document.addEventListener("DOMContentLoaded", showEmpleado);
 const table = document.querySelector('#empleados');
@@ -68,35 +68,45 @@ formInsert.addEventListener('submit',(e)=>{
 //
 const insert=()=>{
   
-  const ClienteID=document.querySelector('#id').value;
-  const Compania=document.querySelector('#company').value;
-  const Contacto=document.querySelector('#contact').value;
-  const Titulo=document.querySelector('#title').value;
-  const Direccion=document.querySelector('#direction').value;
-  const Ciudad=document.querySelector('#city').value;
-  const Regiones=document.querySelector('#region').value;
-  const CodigoPostal=document.querySelector('#potCode').value;
-  const Pais=document.querySelector('#country').value;
-  const Telefono=document.querySelector('#cellphone').value;
-  const Fax=document.querySelector('#fax').value;
+  const apellido=document.querySelector('#apellido').value;
+  const nombre=document.querySelector('#nombre').value;
+  const titulo=document.querySelector('#titulo').value;
+  const tituloCortesia=document.querySelector('#tituloCortesia').value;
+  const fechaNacimiento=document.querySelector('#fechaNacimiento').value;
+  const direccion=document.querySelector('#direccion').value;
+  const ciudad=document.querySelector('#ciudad').value;
+  const regiones=document.querySelector('#regiones').value;
+  const codigoPostal=document.querySelector('#codigoPostal').value;
+  const pais=document.querySelector('#pais').value;
+  const telefono=document.querySelector('#telefono').value;
+  const extension=document.querySelector('#extension').value;
+  const foto=document.querySelector('#foto').value;
+  const notas=document.querySelector('#notas').value;
+  const jefe=document.querySelector('#jefe').value;
+  const rutaFoto=document.querySelector('#rutaFoto').value;
 
   const cliente={
-    ClienteID,
-    Compania,
-    Contacto,
-    Titulo,
-    Direccion,
-    Ciudad,
-    Regiones,
-    CodigoPostal,
-    Pais,
-    Telefono,
-    Fax
+    apellido,
+    nombre,
+    titulo,
+    tituloCortesia,
+    fechaNacimiento,
+    direccion,
+    ciudad,
+    regiones,
+    codigoPostal,
+    pais,
+    telefono,
+    extension,
+    foto,
+    notas,
+    jefe,
+    rutaFoto
   }
   if(validation(cliente)){
     alert("todos los datos son obligatorios")
   }else{
-      return inserClient(cliente);
+      return insertarEmpleado(cliente);
   } 
 }
 
@@ -178,9 +188,8 @@ function updateClie() {
       return update(cliente,dato);
   } 
 }
+*/
 function validation(obj) {
   return !Object.values(obj).every(element=>element != '')
 }
-
- */
 

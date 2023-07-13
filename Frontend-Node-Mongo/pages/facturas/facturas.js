@@ -1,4 +1,4 @@
-import { facturas ,deleteFactura} from "./api.js";
+import { facturas ,deleteFactura,insertarFacturas} from "./api.js";
 
 document.addEventListener("DOMContentLoaded", showFactura);
 const table = document.querySelector('#facturas');
@@ -49,7 +49,7 @@ const borrar=(id)=>{
       deleteFactura(id);
   }
 }
-/* //metodo insertar
+//metodo insertar
 
 
 const formInsert=document.querySelector('#formInsert');
@@ -62,38 +62,42 @@ formInsert.addEventListener('submit',(e)=>{
 //
 const insert=()=>{
   
-  const ClienteID=document.querySelector('#id').value;
-  const Compania=document.querySelector('#company').value;
-  const Contacto=document.querySelector('#contact').value;
-  const Titulo=document.querySelector('#title').value;
-  const Direccion=document.querySelector('#direction').value;
-  const Ciudad=document.querySelector('#city').value;
-  const Regiones=document.querySelector('#region').value;
-  const CodigoPostal=document.querySelector('#potCode').value;
-  const Pais=document.querySelector('#country').value;
-  const Telefono=document.querySelector('#cellphone').value;
-  const Fax=document.querySelector('#fax').value;
+  const cliente=document.querySelector('#cliente').value;
+  const empleado=document.querySelector('#empleado').value;
+  const fechaFactura=document.querySelector('#fechaFactura').value;
+  const rechaRegistro=document.querySelector('#rechaRegistro').value;
+  const fechaEnvio=document.querySelector('#fechaEnvio').value;
+  const envioVia=document.querySelector('#envioVia').value;
+  const transporte=document.querySelector('#transporte').value;
+  const nombreEnvio=document.querySelector('#nombreEnvio').value;
+  const direccionEnvio=document.querySelector('#direccionEnvio').value;
+  const ciudadEnvio=document.querySelector('#ciudadEnvio').value;
+  const regionEnvio=document.querySelector('#regionEnvio').value;
+  const codigoPostalEnvio=document.querySelector('#codigoPostalEnvio').value;
+  const paisEnvio=document.querySelector('#paisEnvio').value;
 
-  const cliente={
-    ClienteID,
-    Compania,
-    Contacto,
-    Titulo,
-    Direccion,
-    Ciudad,
-    Regiones,
-    CodigoPostal,
-    Pais,
-    Telefono,
-    Fax
+  const factura={
+    cliente,
+    empleado,
+    fechaFactura,
+    rechaRegistro,
+    fechaEnvio,
+    envioVia,
+    transporte,
+    nombreEnvio,
+    direccionEnvio,
+    ciudadEnvio,
+    regionEnvio,
+    codigoPostalEnvio,
+    paisEnvio
   }
-  if(validation(cliente)){
+  if(validation(factura)){
     alert("todos los datos son obligatorios")
   }else{
-      return inserClient(cliente);
+      return insertarFacturas(factura);
   } 
 }
-
+/*
 //update
 
 const getClient=async (id)=>{
@@ -171,9 +175,9 @@ function updateClie() {
       return update(cliente,dato);
   } 
 }
+*/
 function validation(obj) {
   return !Object.values(obj).every(element=>element != '')
 }
 
- */
 

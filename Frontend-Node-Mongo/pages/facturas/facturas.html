@@ -104,14 +104,58 @@
                             <button style="color: white;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                         </div>
                         <div class="modal-body">
-                            <form id="formInsert"><!-- method="post" -->
-                                <div class="mb-3">
-                                    <label for="tipo_cliente" class="form-label">Tipo cliente</label>
-                                    <input type="text" class="form-control" id="tipo_cliente" >
+                            <form class="d-flex row" id="formInsert"><!-- method="post" -->
+                                <div class="mb-3 col-6">
+                                    <label for="cliente" class="form-label">Cliente</label>
+                                    <input type="text" class="form-control" id="cliente" >
                                 </div>
-                                <div class="mb-3">
-                                    <label for="tipo_cliente" class="form-label">Tipo CLiente Desc</label>
-                                    <input type="text" class="form-control" id="tipo_cliente" >
+                                <div class="mb-3 col-6">
+                                    <label for="empleado" class="form-label">Empleado</label>
+                                    <input type="text" class="form-control" id="empleado" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="fechaFactura" class="form-label">fechaFactura</label>
+                                    <input type="text" class="form-control" id="fechaFactura" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="rechaRegistro" class="form-label">rechaRegistro</label>
+                                    <input type="text" class="form-control" id="rechaRegistro" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="fechaEnvio" class="form-label">fechaEnvio</label>
+                                    <input type="text" class="form-control" id="fechaEnvio" >
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="envioVia" class="form-label">envioVia</label>
+                                    <input type="text" class="form-control" id="envioVia" >
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="transporte" class="form-label">transporte</label>
+                                    <input type="text" class="form-control" id="transporte" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="nombreEnvio" class="form-label">nombreEnvio</label>
+                                    <input type="text" class="form-control" id="nombreEnvio" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="direccionEnvio" class="form-label">Direccion Envio</label>
+                                    <input type="text" class="form-control" id="direccionEnvio" >
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="ciudadEnvio" class="form-label">ciudadEnvio</label>
+                                    <input type="text" class="form-control" id="ciudadEnvio" >
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="regionEnvio" class="form-label">regionEnvio</label>
+                                    <input type="text" class="form-control" id="regionEnvio" >
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="codigoPostalEnvio" class="form-label">codigoPostalEnvio</label>
+                                    <input type="text" class="form-control" id="codigoPostalEnvio" >
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label for="paisEnvio" class="form-label">paisEnvio</label>
+                                    <input type="text" class="form-control" id="paisEnvio" >
                                 </div>
                                 <button type="submit" class="btn btn-dark" data-bs-dismiss="modal">Submit</button>
                             </form>   

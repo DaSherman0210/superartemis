@@ -1,4 +1,4 @@
-import { categorias , deleteCategoria , insertarCategorias} from "./api.js";
+import { categorias , deleteCategoria , insertarCategorias,getOneCategoria,updateCategoria} from "./api.js";
 
 
 document.addEventListener("DOMContentLoaded",showCategorias);
@@ -70,44 +70,40 @@ const insert=(e)=>{
     }
 }
 
-
-/*
-//update
+//metodo actualizar o UPDATE
 const getCategoria= async(id)=>{
-    const data=await categoria(id);
-    const {CategoriaID,CategoriaNombre,Descripcion,Imagen}=data[0];
-    const CategoriaN=document.querySelector('#nameUpdate');
-    CategoriaN.setAttribute('placeholder',CategoriaNombre);
-    CategoriaN.setAttribute('idCa',id);
-    const Descrip=document.querySelector('#descriptionUpdate');
-    Descrip.setAttribute('placeholder',Descripcion);
+    const data=await getOneCategoria(id);
+    console.log(data);
+    const {categoriaNombre,descripcion,imagen}=data;
+    document.querySelector('#categoriaNombreUpdate').value= categoriaNombre;
+    document.querySelector('#descripcionUpdate').value= descripcion;
+    document.querySelector('#imagenUpdate').value= imagen;
     
 }
 const updateForm=document.querySelector('#updateForm');
 
 updateForm.addEventListener('submit',(e)=>{
+    console.log(2);
     e.preventDefault();
     updateCa();
 })
 
 function updateCa(){
-    const CategoriaID=document.querySelector('#nameUpdate');
-    const id=parseInt(CategoriaID.getAttribute('idCa'));
-    const CategoriaNombre=document.querySelector('#nameUpdate').value;
-    const Descripcion=document.querySelector('#descriptionUpdate').value;
-    const Imagen=document.querySelector('#imageUpdate').files[0].name;
+    const categoriaNombre=document.querySelector('#categoriaNombreUpdate').value;
+    const descripcion=document.querySelector('#descripcionUpdate').value;
+    const imagen=document.querySelector('#imagenUpdate').value;
+
     const categoria={
-        CategoriaNombre,
-        Descripcion,
-        Imagen
-    }
-    console.log(categoria,id);
+        categoriaNombre,
+        descripcion,
+        imagen
+    } 
    if(validation(categoria)){
         alert("todos los datos son obligatorios")
     }else{
-        return update(categoria,id);
+        return updateCategoria(categoria,id);
     }  
-} */
+}
 
 
 function validation(obj) {

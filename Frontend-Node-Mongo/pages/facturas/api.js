@@ -23,3 +23,18 @@ export const deleteFactura = async (id)=>{
         console.log(error)
     }
 }
+
+export const insertarFacturas = async (facturas)=>{
+    try {
+        await fetch(`${urlGetFactura}/add`,{
+            method:'POST',
+            body:JSON.stringify(facturas),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        window.location.href = "./facturas.html"
+    } catch (error) {
+        console.log(error); 
+    }
+}
